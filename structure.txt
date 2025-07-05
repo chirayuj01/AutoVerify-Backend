@@ -1,0 +1,20 @@
+AutoVerify/
+├── app/
+│   ├── __init__.py
+│   ├── routes.py
+│   ├── utils/
+│   │   ├── nlp_model.py
+│   │   ├── domain_checker.py
+│   │   └── scam_features.py
+│
+├── database/
+│   └── models.py
+│
+├── model/
+│   ├── scam_detector.joblib         # (auto generated after training)
+│   └── train_model.py               # model training script
+│
+├── config.py
+├── run.py
+├── requirements.txt
+└── README.md
