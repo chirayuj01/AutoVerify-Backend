@@ -1,6 +1,5 @@
 from flask import Blueprint, request, jsonify
 from app.utils.nlp_model import predict_scam
-from app.utils.scam_features import send_alert_notification
 from app import db
 from Database.jobModel import JobModel
 
@@ -37,17 +36,6 @@ def verify():
     print('record added to database')
     if not text:
         return jsonify({"error": "Missing 'description' field"}), 400
-
-    # alert if scam
-    if result["scam"]:
-        send_alert_notification(
-            title='AutoVerify Scam Alert',
-            message=(
-                f"Scam detected ({result['confidence']*100}%) fake.\n"
-                f"Description: {text[:200]}{'...' if len(text) > 200 else ''}"
-            )
-        )
-
 
     return jsonify(result)
 
