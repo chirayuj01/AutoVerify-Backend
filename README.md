@@ -4,7 +4,7 @@ AutoVerify is a Flask-based REST API that uses machine learning to detect fake j
 - 🔍 Detect fake job/internship descriptions
 - 🧠 Powered by ML (TF-IDF + Logistic Regression)
 - 🕒 Timestamps in IST (Indian Standard Time)
-- 🗂️ Stores every verification in a database
+- 🗂️ Stores every verification in a SQLite database
 - 🔔 Optional Windows desktop notification for scams
 ## 📁 File Structure
 ```
