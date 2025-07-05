@@ -26,7 +26,7 @@ AutoVerify/
 ### `GET /`
 Returns a welcome message.
 ```json
-{ "message": "Welcome to AutoVerify API" }
+{ "message": "Welcome to JobShield API" }
 ```
 ### `GET /verify?description=...`
 Submits a job description and receives prediction. If not already present, stores it.
