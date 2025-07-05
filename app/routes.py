@@ -9,7 +9,7 @@ main_bp = Blueprint("main", __name__)
 
 @main_bp.route("/", methods=["GET"])
 def index():
-    return jsonify({"message": "Welcome to AutoVerify API"})
+    return jsonify({"message": "Welcome to JobShield API"})
 
 
 @main_bp.route("/show-data", methods=["GET"])
