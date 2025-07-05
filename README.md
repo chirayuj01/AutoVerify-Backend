@@ -1,4 +1,4 @@
-# 🛡️ AutoVerify – Scam Job & Internship Detector API
+# 🛡️ JobShield – Scam Job & Internship Detector API
 AutoVerify is a Flask-based REST API that uses machine learning to detect fake job or internship descriptions. It helps users verify suspicious offers, store predictions, and view past results — all with Indian Standard Time timestamps.
 ## 📦 Features
 - 🔍 Detect fake job/internship descriptions
