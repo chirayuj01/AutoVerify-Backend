@@ -18,24 +18,25 @@ def show_data():
     return jsonify([job.serialize() for job in jobs]), 200
 
     
-@main_bp.route("/verify", methods=["GET"])
+@main_bp.route("/verify", methods=["POST"])
 def verify():
-    text = request.args.get("description", "")
+    data = request.get_json()
+    if not data or "description" not in data:
+        return jsonify({"error": "Missing 'description' field"}), 400
+
+    text = data["description"]
     result = predict_scam(text)
 
-    job=JobModel(
+    job = JobModel(
         description=text,
         scam=result["scam"],
         confidence=result["confidence"]
-        )
+    )
 
     if not JobModel.query.filter_by(description=text).first():
         db.session.add(job)
         db.session.commit()
-
-    print('record added to database')
-    if not text:
-        return jsonify({"error": "Missing 'description' field"}), 400
+        print('Record added to database')
 
     return jsonify(result)
 
